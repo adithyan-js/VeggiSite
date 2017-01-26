@@ -35,4 +35,9 @@ public String gotoHome3()
 {
 	return "index";
 }
+@RequestMapping("/AboutUs")
+public String gotoHome4()
+{
+	return "AboutUs";
+}
 }

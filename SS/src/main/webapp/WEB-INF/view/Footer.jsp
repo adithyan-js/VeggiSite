@@ -7,8 +7,9 @@
 <title>Footer Page</title>
  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="<c:url value='/resource/css/bootstrap.min.css'/>"/>
-   <link rel="stylesheet" href="<c:url value='/resource/js/bootstrap.min.js'/>"/>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="<c:url value='/resource/mycss/Footer.css'/>"/>
 
 </head>
@@ -55,9 +56,7 @@
                         <li> <a href="#"> <i class=" fa fa-facebook">   </i> </a> </li>
                         <li> <a href="#"> <i class="fa fa-twitter">   </i> </a> </li>
                         <li> <a href="#"> <i class="fa fa-google-plus">   </i> </a> </li>
-                        <li> <a href="#"> <i class="fa fa-pinterest">   </i> </a> </li>
-                        <li> <a href="#"> <i class="fa fa-youtube">   </i> </a> </li>
-                    </ul>
+                        </ul>
                 </div>
             </div>
             <!--/.row--> 
@@ -68,7 +67,7 @@
     
     <div class="footer-bottom">
         <div class="container">
-            <p class="pull-left"> Copyright © Foote. All right reserved. </p>
+            <p class="pull-left"> Copyright ©  All right reserved. </p>
             <div class="pull-right">
                 <ul class="nav nav-pills payments">
                     <li><i class="fa fa-cc-visa"></i></li>
