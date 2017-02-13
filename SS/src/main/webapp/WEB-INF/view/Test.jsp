@@ -1,4 +1,5 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -255,20 +256,22 @@ form:after {
 <div class="container">
 	<section id="content">
 		<form action="">
-			<h1>Login</h1>
+			<h1>Login Form</h1>
 			<div>
-				<input type="text" placeholder="EmailId or Mobile Number" required="true" id="intake" />
+				<input type="text" placeholder="Username" required="true" id="username" />
 			</div>
 			<div>
 				<input type="password" placeholder="Password" required="true" id="password" />
 			</div>
 			<div>
 				<input type="submit" value="Log in" />
-				<a href="#">Forgot password?</a>
-				<a href="SignUp">Register</a>
+				<a href="#">Lost your password?</a>
+				<a href="#">Register</a>
 			</div>
 		</form><!-- form -->
-	
+		<div class="button">
+			<a href="#">Download source file</a>
+		</div><!-- button -->
 	</section><!-- content -->
 </div><!-- container -->
 <jsp:include page="Footer.jsp"  />

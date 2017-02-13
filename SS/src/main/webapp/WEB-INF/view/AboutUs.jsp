@@ -6,7 +6,7 @@
 <title>AboutUs</title>
 </head>
 <body style="background-color:#141415;">
-<jsp:include page="Header.jsp"/>
+<jsp:include page="HeaderAfterLogin.jsp"/>
 <jsp:include page="Footer.jsp"  />
 </body>
 </html>

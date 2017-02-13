@@ -11,10 +11,9 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="<c:url value='/resource/mycss/Navbar.css'/>"/>
 <link rel="stylesheet" href="<c:url value='/resource/mycss/Login.css'/>"/>
-
 </head>
-<body data-spy="scroll" data-target=".navbar" data-offset="50">
-<nav class="navbar navbar-default navbar-fixed-top" >
+<body>
+<nav class="navbar navbar-default" >
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -26,7 +25,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="ProductForm">Add Product</a></li>
+       
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Raid <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -47,13 +46,23 @@
         </li>
         
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="SignUp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="Login" ><span class="glyphicon glyphicon-log-in" ></span> Login</a></li>
-      </ul>
+     <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" href="#"><span class="glyphicon glyphicon-user"></span>Welcome,User</a>
+
+                    <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Account Details</a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li><a href="#"><span class="glyphicon glyphicon-log-out"></span>  Logout</a></li>
+
+                </ul>
     </div>
   </div>
 </nav>
-
+		  
 </body>
 </html>
