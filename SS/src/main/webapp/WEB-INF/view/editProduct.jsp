@@ -11,8 +11,9 @@
   <title>Spring MVC Form Handling</title>
  </head>
  <body>
+ <jsp:include page="Header.jsp"  />
   <h2>Add Product Data</h2>
-  <form:form method="POST" action="./updateProduct" commandName="prdfrm">
+  <form:form method="POST" action="./updateProduct" commandName="prdfrm" enctype="multipart/form-data">
       <table>
        <tr>
            <td><form:label path="productid">Product ID:</form:label></td>
@@ -37,6 +38,6 @@
         </tr>
    </table> 
  </form:form>
- 
+ <jsp:include page="Footer.jsp"  />
  </body>
 </html>

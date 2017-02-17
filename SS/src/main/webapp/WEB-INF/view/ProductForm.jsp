@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
  
    <%@page isELIgnored="false" %>
+<jsp:include page="Header.jsp"  />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
  <head>
@@ -10,16 +11,19 @@
   <title>Product Form</title>
  </head>
  <body>
+ 
   <h2>Add Product Data</h2>
-  <form:form method="POST" action="./saveProduct" commandName="prdfrm">
+  <form:form method="POST" action="./saveProduct" commandName="prdfrm" enctype="multipart/form-data">
       <table>
 <!--        <tr> -->
 <%--            <td><form:label path="productid">Product ID:</form:label></td> --%>
 <%--            <td><form:input path="id" value="${product.productid}" readonly="true"/></td> --%>
 <!--        </tr> -->
+<form:errors path="*" cssStyle="color:#ff0000" />
        <tr>
            <td><form:label path="name">Product Name:</form:label></td>
-           <td><form:input path="name" /></td>
+           <td><form:input path="name" /> 
+           </td>
        </tr>
        <tr>
            <td><form:label path="description">Product Description:</form:label></td>
@@ -35,7 +39,16 @@
 			<form:radiobutton path="category.id" value="${c.id}" />${c.categoryDetails}
 			</c:forEach></td>
        </tr>
-       
+               <tr>
+           <td><label for="suppliers">Supplier</label></td>
+           <td><c:forEach var="s" items="${suppliers}">
+			<form:radiobutton path="suppliers.id" value="${s.id}" />${s.suppliersDetails}
+			</c:forEach></td>
+       </tr>
+       <tr>
+          <td><form:label path="image">Product Image:<span class="text-danger">*</span></form:label></td>
+           <td><form:input path="image" type="file" /></td>
+       </tr>
        
           <tr>
          <td colspan="2"><input type="submit" value="Submit"/></td>
@@ -45,44 +58,8 @@
   
    <a type="button" class="btn-success"  href="listProducts">View all products</a>
 
-  <%-- <center>
-<div style="color: teal; font-size: 30px">User Details</div>
 
-  <c:if test="${!empty productList}">
-   <table border="1" bgcolor="black" width="600px">
-    <tr
-     style="background-color: teal; color: white; text-align: center;"
-     height="40px">
-     
-     <td>Product Id</td>
-     <td>Product Name</td>
-   <td>Product Description</td>
-   <td>Product Price</td>
-   
-     <td>Edit</td>
-     <td>Delete</td>
-    </tr>
-    <c:forEach items="${productList}" var="pd">
-     <tr
-      style="background-color: white; color: black; text-align: center;"
-      height="30px">
-      
-      <td><c:out value="${pd.productid}" />
-      </td>
-      <td><c:out value="${pd.name}" />
-      </td>
-      <td><c:out value="${pd.description}" />
-      </td>
-      <td><c:out value="${pd.price}" />
-      </td>
-      <td><a href="edit?id=${pd.productid}">Edit</a></td>
-      <td><a href="deleteProduct?id=${pd.productid}">Delete</a></td>
-     </tr>
-    </c:forEach>
-   </table>
-  </c:if>
-  <a href="ProductForm">add new product</a>
-</center> --%>
 </form:form>
+<jsp:include page="Footer.jsp"  />
  </body>
 </html>

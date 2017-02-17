@@ -1,5 +1,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%-- <%response.sendRedirect("Productform");%> --%>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -32,8 +33,8 @@
   </style>
 </head>
 <body style="background-color:#2E2E2E;">
-
 <jsp:include page="Header.jsp"  />
+
 <div id="myCarousel" class="carousel slide " data-ride="carousel">
   
 

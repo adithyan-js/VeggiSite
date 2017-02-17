@@ -1,5 +1,6 @@
 package com.anya.model;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -9,12 +10,16 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class Category {
+public class Suppliers implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -723583058586873479L;
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 private int id;
-private String categoryDetails;
-@OneToMany(mappedBy="category")
+private String suppliersDetails;
+@OneToMany(mappedBy="suppliers")
 private List<Product> products;
 
 
@@ -24,11 +29,11 @@ public int getId() {
 public void setId(int id) {
 	this.id = id;
 }
-public String getCategoryDetails() {
-	return categoryDetails;
+public String getSuppliersDetails() {
+	return suppliersDetails;
 }
-public void setCategoryDetails(String categoryDetails) {
-	this.categoryDetails = categoryDetails;
+public void setCategoryDetails(String suppliersDetails) {
+	this.suppliersDetails = suppliersDetails;
 }
 public List<Product> getProducts() {
 	return products;
@@ -38,7 +43,7 @@ public void setProducts(List<Product> products) {
 }
 
 public String toString() {
-	return categoryDetails;
+	return suppliersDetails;
 }
 
 }
