@@ -79,6 +79,10 @@ public class HomeController {
 	public String gotoViewProducts() {
 		return "viewProducts";
 	}
+	@RequestMapping("/cart")
+	public String gotoCart() {
+		return "cart";
+	}
 
 	@RequestMapping(value = "loginCk", method = RequestMethod.POST)
 	public void validateLogin(HttpServletRequest request, HttpServletRequest response, ServletRequest req,

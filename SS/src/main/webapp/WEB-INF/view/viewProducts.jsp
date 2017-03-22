@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
 <style>
 .card {
 	    background-color:#ffffff;  
@@ -21,7 +22,7 @@
 	}
 	</style>
 </head>
-<body style="background-color:#2E2E2E;" ng-app="myApp">
+<body style="background-color:#2E2E2E;" ng-app="app">
 	<%@include file="Header.jsp" %>
 	<br>
 	<br>
@@ -31,7 +32,7 @@
 		<div class="w3-container" ng-controller="ProductController" >
 		<h3>${product.name}</h3>
 		<div class="w3-card-12" style="width:50%;height:50%" >
-		<p align="center"><c:url var="src" value="/resource/images/${pd.productid }.png"></c:url>
+		<p align="center"><c:url var="src" value="/resource/images/${product.productid }.png"></c:url>
 				<img src="${src }" style="width:100px;height:100px;" /></p>
 			<div class="w3-container w3-center">
 			<p>

@@ -62,7 +62,7 @@ $('#Mytable').dataTable({
      <td>Edit</td>
      <td>Delete</td>
     </security:authorize>
-    <security:authorize access="hasRole('ROLE_USER')"> 
+    <security:authorize access="hasAnyRole('ROLE_ADMIN','ROLE_USER')"> 
      <td>Product Info</td>
      </security:authorize>
     </tr></thead>
@@ -89,7 +89,7 @@ $('#Mytable').dataTable({
       <td><a href="deleteProduct?id=${pd.productid}"><span class="glyphicon glyphicon-remove"></span></a></td>
       			<%-- <td><a href="" ng-click="addToCart(${pd.productid })"><span class="glyphicon glyphicon-shopping-cart"></span></a></td> --%>
      </security:authorize>
-     <security:authorize access="hasRole('ROLE_USER')">
+     <security:authorize access="hasAnyRole('ROLE_ADMIN','ROLE_USER')">
       <td><a href="viewProducts/${pd.productid}" ><span class="glyphicon glyphicon-info-sign"></span></a></td>
      </security:authorize>
      </tr>

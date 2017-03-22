@@ -52,7 +52,7 @@ body
         <security:authorize access="hasRole('ROLE_ADMIN')">
         <li><a href="ProductForm">Add Product</a></li>
         
-        <li class="dropdown">
+     <%--    <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Raid <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <c:url var="url1" value="productsByCategory?searchCondition=vegetables"></c:url>
@@ -62,7 +62,8 @@ body
 		
           </ul>
           </li>
-                  </security:authorize>
+         --%>         
+          </security:authorize>
         
        </c:if>
        <%-- <li><form class="navbar-form navbar-left">
