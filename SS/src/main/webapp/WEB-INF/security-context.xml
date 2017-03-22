@@ -1,0 +1,41 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xmlns:webflow-config="http://www.springframework.org/schema/webflow-config"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans.xsd 
+       http://www.springframework.org/schema/security 
+       http://www.springframework.org/schema/security/spring-security.xsd">
+
+
+    <security:http auto-config="true">
+   <security:csrf disabled="true"/>
+    <security:intercept-url pattern="/index*/**" access="permitAll"/>
+    <security:intercept-url pattern="/home" access="permitAll"/>
+    <security:intercept-url pattern="/Login" access="permitAll"/>
+    <security:intercept-url pattern="/ProductForm/**" access="hasAnyRole('ROLE_ADMIN')"/>
+    <security:intercept-url pattern="/listProducts" access="hasAnyRole('ROLE_ADMIN','ROLE_USER')"/>
+    <security:intercept-url pattern="/signup" access="permitAll"/>
+       <security:intercept-url pattern="/viewProducts" access="permitAll"/>
+
+    
+    <security:form-login login-page="/Login" 
+     authentication-failure-url="/Login?error" 
+     login-processing-url="/j_spring_security_check" 
+     default-target-url="/index" 
+     username-parameter="j_emailid" 
+     password-parameter="j_password"/>
+     <security:logout logout-success-url="/Login?logout" 
+     logout-url="/j_spring_security_logout"/>
+    </security:http>
+    <security:authentication-manager>
+    <security:authentication-provider>
+     
+    <security:jdbc-user-service
+                    data-source-ref="dataSource"
+                    authorities-by-username-query="SELECT emailid, role FROM authorities WHERE emailid = ?"
+                    users-by-username-query="SELECT email, password, enabled FROM signup WHERE email = ?" />
+
+    </security:authentication-provider>
+    </security:authentication-manager>
+</beans>
